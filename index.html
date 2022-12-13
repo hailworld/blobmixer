@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://blobmixer.14islands.com/ -->
+<html lang="en" class="loaded">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A toy for creating and sharing 3D blobs">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#657174">
+  <meta name="theme-color" content="#75bcc6">
+  <title>Blobmixer</title>
+  <link href="./index.css" rel="stylesheet">
+  <script defer="defer" src="./main.0adc0468.js"></script>
+  <link href="./main.4ca7835d.css" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Aften Screen';
+      src: url('./fonts/aften_screen.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block
+    }
+
+    body,
+    html {
+      background: #141518;
+      font-family: 'Aften Screen', sans-serif;
+      font-display: block
+    }
+
+    @keyframes blob {
+      0% {
+        transform: translate(-50%, -50%) scale(.9);
+        border-radius: 51% 49% 51% 49%/45% 44% 56% 55%
+      }
+
+      33% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 54% 46% 54% 46%/45% 46% 54% 55%
+      }
+
+      66% {
+        transform: translate(-50%, -50%) scale(.9);
+        border-radius: 48% 52% 48% 52%/49% 41% 59% 51%
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 51% 49% 51% 49%/45% 44% 56% 55%
+      }
+    }
+
+    @keyframes blobhide {
+      from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1)
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0)
+      }
+    }
+
+    .loaderblob {
+      width: 14vw;
+      height: 14vw;
+      min-width: 100px;
+      min-height: 100px;
+      position: fixed;
+      top: 46%;
+      left: 50%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      background: #000;
+      border-radius: 50% 50% 50% 50%;
+      animation: blob 2s ease-in-out infinite alternate;
+      transition: transform .5s ease-out
+    }
+
+    @keyframes pulse {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .loaderprogress {
+      position: fixed;
+      top: 46%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      opacity: 0;
+      animation: pulse .5s infinite alternate
+    }
+
+    .loaderprogress.loading {
+      animation: none;
+      opacity: 1
+    }
+  </style>
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <div class="loaderblob"></div>
+  <div class="loaderprogress"><span class="loadernumber">1</span> %</div>
+</body>
+
+</html>
